@@ -33,6 +33,7 @@ from datetime import datetime
 
 todays_year = datetime.today().year
 todays_month = datetime.today().month
+err_message = 'input must be in format: 14_cal.py [month] [year]'
 
 if len(sys.argv) == 1:
   user_month = todays_month
@@ -42,13 +43,14 @@ if len(sys.argv) == 1:
 if len(sys.argv) == 2:
   user_month = int(sys.argv[1])
   user_year = todays_year
-  if user_month
   print(calendar.month(user_year, user_month))
 
 if len(sys.argv) == 3:
   user_month = int(sys.argv[1])
   user_year = int(sys.argv[2])
   print(calendar.month(user_year, user_month))
-  
-  #print(calendar.month(my_year, my_month, 2, 1))
+
+if len(sys.argv) not in [1, 2, 3]:
+  print(err_message)
+
   
